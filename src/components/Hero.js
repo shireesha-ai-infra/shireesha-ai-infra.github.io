@@ -22,13 +22,13 @@ export default function Hero() {
             </p>
 
             <div className={styles.ctaGroup}>
-                <Link href="#projects" className={styles.primaryBtn}>
-                    View Projects
+                <Link href="#projects" className={styles.btn}>
+                    Projects
                 </Link>
-                <a href="/resume.pdf" className={styles.secondaryBtn} target="_blank" rel="noopener noreferrer">
+                <a href="/resume.pdf" className={styles.btn} target="_blank" rel="noopener noreferrer">
                     Resume
                 </a>
-                <a href="https://github.com/shireesha-ai-infra" className={styles.secondaryBtn} target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/shireesha-ai-infra" className={styles.btn} target="_blank" rel="noopener noreferrer">
                     GitHub
                 </a>
             </div>

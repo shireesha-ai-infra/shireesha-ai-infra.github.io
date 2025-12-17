@@ -94,39 +94,26 @@
     transform: translateY(20px);
 }
 
-.primaryBtn {
+.btn {
     padding: 0.875rem 2rem;
     border-radius: 12px;
-    background: #fff;
-    color: #000;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-.primaryBtn:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-}
-
-.secondaryBtn {
-    padding: 0.875rem 2rem;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: #fff;
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.secondaryBtn:hover {
-    background: rgba(255, 255, 255, 0.08);
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 @keyframes fadeUp {
