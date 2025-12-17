@@ -19,8 +19,8 @@ const projectData = [
     {
         title: "Scalable ML Inference API",
         description: "High-throughput inference service designed for low-latency requests. Implemented batch processing and auto-scaling policies to handle traffic spikes efficiently.",
-        tags: ["Ray Serve", "Python", "AsyncIO", "Redis"],
-        github: "#",
+        tags: ["Python", "ML"],
+        github: "https://github.com/shireesha-ai-infra/Scalable_ML_Inference_API",
         live: "#"
     },
     {

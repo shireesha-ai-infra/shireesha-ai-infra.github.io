@@ -17,7 +17,7 @@ export default function About() {
 
                 <div className={styles.item}>
                     <div className={styles.date}>2021 - 2024</div>
-                    <h3 className={styles.role}>Software Engineer (Automation & Infra) @ AMD</h3>
+                    <h3 className={styles.role}>Software System Designer 2 (Automation & Infra) @ AMD</h3>
                     <p className={styles.description}>
                         Built large-scale Python automation frameworks for validating next-gen silicon.
                         Engineered systems that handle thousands of tests daily, emphasizing <span className={styles.highlight}>scale, quality, and rigorous CI/CD practices</span>.
