@@ -1,36 +1,7 @@
+import Link from 'next/link';
 import { Github, ExternalLink } from 'lucide-react';
 import styles from './Projects.module.css';
-
-const projectData = [
-    {
-        title: "Production-Grade AI Infrastructure Platform",
-        description: "End-to-end MLOps platform featuring MLflow tracking, registry, and FastAPI inference. Built on Kubernetes with Docker, featuring canary deployments and automated rollbacks via CI/CD.",
-        tags: ["Kubernetes", "MLflow", "FastAPI", "Docker", "CI/CD"],
-        github: "#",
-        live: "#"
-    },
-    {
-        title: "LLM Experiment Tracking & Governance",
-        description: "Centralized system for tracking large language model experiments. Includes prompt versioning, response evaluation benchmarks, and governance policies for model capabilities.",
-        tags: ["LLMOps", "Python", "Weights & Biases", "LangChain"],
-        github: "#",
-        live: "#"
-    },
-    {
-        title: "Scalable ML Inference API",
-        description: "High-throughput inference service designed for low-latency requests. Implemented batch processing and auto-scaling policies to handle traffic spikes efficiently.",
-        tags: ["Python", "ML"],
-        github: "https://github.com/shireesha-ai-infra/Scalable_ML_Inference_API",
-        live: "#"
-    },
-    {
-        title: "Agentic AI System Orchestrator",
-        description: "Framework for coordinating multi-agent workflows. Enables agents to dynamically select tools, share context, and execute complex multi-step reasoning tasks.",
-        tags: ["GenAI", "Agents", "Vector DB", "OpenAI API"],
-        github: "#",
-        live: "#"
-    }
-];
+import { projects } from '@/data/projects';
 
 export default function Projects() {
     return (
@@ -38,10 +9,12 @@ export default function Projects() {
             <h2 className="heading-lg" style={{ marginBottom: '3rem' }}>Notable Projects</h2>
 
             <div className={styles.grid}>
-                {projectData.map((project, idx) => (
+                {projects.map((project, idx) => (
                     <div key={idx} className={styles.card}>
                         <div>
-                            <h3 className={styles.title}>{project.title}</h3>
+                            <Link href={`/projects/${project.id}`} className={styles.titleLink}>
+                                <h3 className={styles.title}>{project.title}</h3>
+                            </Link>
                             <p className={styles.description}>{project.description}</p>
                         </div>
 

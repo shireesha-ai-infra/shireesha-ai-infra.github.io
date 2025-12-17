@@ -1,0 +1,79 @@
+.container {
+    max_width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accents-5);
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.backLink:hover {
+    color: var(--foreground);
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tags {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 0.875rem;
+    color: var(--accents-4);
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0070f3;
+    font-weight: 500;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.content {
+    line-height: 1.8;
+    color: var(--accents-3);
+    white-space: pre-line;
+    /* Handle newlines from data strings */
+}
+
+/* Markdown-like styling for content could go here if using markdown renderer */

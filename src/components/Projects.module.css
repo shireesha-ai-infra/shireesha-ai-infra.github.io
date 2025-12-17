@@ -92,3 +92,15 @@
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2rem;
 }
+
+.titleLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: fit-content;
+}
+
+.titleLink:hover .title {
+    color: #0070f3;
+    transition: color 0.2s ease;
+}
