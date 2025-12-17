@@ -1,0 +1,94 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: var(--accents-5);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    max-width: 90%;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(0, 112, 243, 0.1);
+    /* Blue tint */
+    color: #0070f3;
+    border: 1px solid rgba(0, 112, 243, 0.2);
+    font-weight: 500;
+}
+
+.links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.card:hover .links {
+    opacity: 1;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Alternate layout for larger screens: Grid or List? 
+   Let's do a 2-column grid for cards, but keep full width for important ones?
+   Or just a clean vertical list for "Projects" to show detail?
+   Grid is better for browsing.
+*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}

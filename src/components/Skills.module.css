@@ -1,0 +1,66 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.category {
+    font-size: 0.875rem;
+    color: var(--accents-5);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.skillList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill {
+    padding: 0.375rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    color: var(--foreground);
+    border: 1px solid transparent;
+}
+
+.card:hover .skill {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Specific Bento alignments for larger screens if needed */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+    }
+
+    /* Make Platform span 2 columns */
+    .card:nth-child(2) {
+        grid-column: span 2;
+    }
+
+    /* Make GenAI span 2 columns */
+    .card:nth-child(7) {
+        grid-column: span 2;
+    }
+}
