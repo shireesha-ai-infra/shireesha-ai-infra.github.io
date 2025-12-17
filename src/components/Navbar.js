@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Github, Linkedin, Menu, X, FileText } from 'lucide-react';
+import { Github, Linkedin, Menu, X, FileText, Home } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -13,8 +13,8 @@ export default function Navbar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.container}>
-                <Link href="/" className={styles.logo}>
-                    Shireesha Govindu
+                <Link href="/" className={styles.logo} aria-label="Home">
+                    <Home size={24} />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -22,6 +22,7 @@ export default function Navbar() {
                     <Link href="#about" className={styles.link}>About</Link>
                     <Link href="#skills" className={styles.link}>Skills</Link>
                     <Link href="#projects" className={styles.link}>Projects</Link>
+                    <Link href="#blogs" className={styles.link}>Blogs</Link>
                     <Link href="#experience" className={styles.link}>Experience</Link>
 
                     <div className={styles.socials}>
@@ -48,6 +49,7 @@ export default function Navbar() {
                         <Link href="#about" className={styles.link} onClick={toggleMenu}>About</Link>
                         <Link href="#skills" className={styles.link} onClick={toggleMenu}>Skills</Link>
                         <Link href="#projects" className={styles.link} onClick={toggleMenu}>Projects</Link>
+                        <Link href="#blogs" className={styles.link} onClick={toggleMenu}>Blogs</Link>
                         <Link href="#experience" className={styles.link} onClick={toggleMenu}>Experience</Link>
 
                         <div className={styles.socials}>

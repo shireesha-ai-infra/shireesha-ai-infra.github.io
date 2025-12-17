@@ -1,5 +1,5 @@
 .section {
-    padding: 8rem 0;
+    padding: 6rem 0;
     position: relative;
 }
 
@@ -7,72 +7,84 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 4rem;
-    background: linear-gradient(to right, #fff, #666);
+    background: linear-gradient(to right, #fff, #9ca3af);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 800px;
     position: relative;
-    border-left: 1px solid var(--accents-2);
     padding-left: 2rem;
-    margin-left: 1rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .item {
     position: relative;
-    opacity: 0.9;
-    transition: opacity 0.3s;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.item:last-child {
+    margin-bottom: 0;
 }
 
 .item:hover {
-    opacity: 1;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(10px);
 }
 
+/* Timeline dot */
 .item::before {
     content: '';
     position: absolute;
-    left: -2.35rem;
-    top: 0.5rem;
-    width: 0.75rem;
-    height: 0.75rem;
+    top: 2.5rem;
+    left: -2.6rem;
+    width: 1rem;
+    height: 1rem;
     background: var(--background);
-    border: 1px solid var(--accents-4);
+    border: 2px solid #a78bfa;
     border-radius: 50%;
     z-index: 1;
+    transition: all 0.3s ease;
 }
 
 .item:hover::before {
-    border-color: #fff;
-    background: #fff;
+    background: #a78bfa;
+    box-shadow: 0 0 10px #a78bfa;
 }
 
 .date {
     font-size: 0.875rem;
-    color: var(--accents-5);
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    font-family: var(--font-mono, monospace);
+    color: #a78bfa;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .role {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
     color: var(--foreground);
-    margin-bottom: 0.5rem;
 }
 
 .description {
-    color: var(--accents-4);
-    line-height: 1.6;
-    font-size: 1rem;
+    color: var(--accents-5);
+    line-height: 1.7;
 }
 
 .highlight {
-    color: #fff;
+    color: #38bdf8;
     font-weight: 500;
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, ExternalLink } from 'lucide-react';
+import { Github, ExternalLink, Folder } from 'lucide-react';
 import styles from './Projects.module.css';
 import { projects } from '@/data/projects';
 
@@ -13,7 +13,10 @@ export default function Projects() {
                     <div key={idx} className={styles.card}>
                         <div>
                             <Link href={`/projects/${project.id}`} className={styles.titleLink}>
-                                <h3 className={styles.title}>{project.title}</h3>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                                    <Folder size={24} color="#60a5fa" />
+                                    <h3 className={styles.title}>{project.title}</h3>
+                                </div>
                             </Link>
                             <p className={styles.description}>{project.description}</p>
                         </div>

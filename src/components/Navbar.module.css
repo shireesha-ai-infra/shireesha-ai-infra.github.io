@@ -33,6 +33,9 @@
 
 .logo:hover {
     opacity: 1;
+    color: #60a5fa;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));
 }
 
 .links {
@@ -44,12 +47,30 @@
 .link {
     font-size: 0.875rem;
     color: var(--accents-5);
-    transition: color 0.2s;
+    transition: all 0.3s ease;
     font-weight: 500;
+    position: relative;
 }
 
 .link:hover {
-    color: var(--foreground);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(to right, #60a5fa, #34d399);
+    transition: width 0.3s ease;
+}
+
+.link:hover::after {
+    width: 100%;
 }
 
 .socials {
