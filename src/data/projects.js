@@ -1,5 +1,36 @@
 export const projects = [
     {
+        id: "ml-llm-experiment-tracking",
+        title: "1.ML & LLM Experperiment Tracking System with MLFlow",
+        description: "Centralized system for tracking large language model experiments. Includes prompt versioning, response evaluation benchmarks, and governance policies for model capabilities.",
+        tags: ["MLFlow","Experiment Tracking","Prompt versioning","LLMOps"],
+        github: "https://github.com/shireesha-ai-infra/ml-llm-experiment-tracking",
+        live: "#",
+        longDescription: `
+            This project implements a unified experiment tracking system for classical ML, neural networks, LLMs, and RAG pipelines using MLflow as a centralized control plane.
+It treats models, prompts, and retrieval configurations as first-class, versioned artifacts, ensuring full reproducibility across experiments.
+The system captures not only accuracy-style metrics, but also latency, token usage, and cost, enabling quality–cost tradeoff analysis.
+All experiments are logged in a consistent structure, allowing side-by-side comparison and auditability through the MLflow UI.
+This design mirrors production-grade MLOps and LLMOps workflows used in real AI infrastructure systems.
+        `,
+        executionFlow: `
+            1️⃣ Experiment Initialization
+Each training or inference script initializes an MLflow experiment, defining the scope (ML, NN, LLM, or RAG) and ensuring logical separation of runs.
+
+2️⃣ Parameter & Configuration Logging
+Model hyperparameters, prompt versions, and RAG configurations (chunk size, retriever, embeddings) are logged as immutable parameters for reproducibility.
+
+3️⃣ Training / Inference Execution
+The model is trained or the LLM/RAG pipeline is executed, producing predictions or responses while tracking runtime behavior.
+
+4️⃣ Metric & Cost Tracking
+Performance metrics (accuracy, loss, relevance), system metrics (latency), and operational metrics (tokens, cost) are logged to MLflow.
+
+5️⃣ Artifact Storage & Comparison
+Models, prompt files, and generated outputs are stored as artifacts, enabling visual comparison, rollback, and promotion decisions via the MLflow UI.
+        `
+    },
+    {
         id: "ai-infrastructure-platform",
         title: "Production-Grade AI Infrastructure Platform",
         description: "End-to-end MLOps platform featuring MLflow tracking, registry, and FastAPI inference. Built on Kubernetes with Docker, featuring canary deployments and automated rollbacks via CI/CD.",
@@ -22,24 +53,6 @@ export const projects = [
             4. **CI/CD Pipeline**: A GitHub Actions workflow triggers, building the Docker image and pushing it to the container registry.
             5. **Deployment**: Kubernetes updates the deployment manifest. Canary deployment strategy allows for gradual traffic shifting.
             6. **Monitoring**: Prometheus and Grafana monitor system health and model latency.
-        `
-    },
-    {
-        id: "llm-experiment-tracking",
-        title: "LLM Experiment Tracking & Governance",
-        description: "Centralized system for tracking large language model experiments. Includes prompt versioning, response evaluation benchmarks, and governance policies for model capabilities.",
-        tags: ["LLMOps", "Python", "Weights & Biases", "LangChain"],
-        github: "#",
-        live: "#",
-        longDescription: `
-            Focused on the unique challenges of Large Language Models, this system provides a robust framework for managing prompts and evaluating model outputs.
-            It ensures reproducibility and compliance with safety guidelines.
-        `,
-        executionFlow: `
-            1. **Prompt Engineering**: Prompts are designed and versioned.
-            2. **Experiment Run**: The LLM is queried with different prompt versions and parameters.
-            3. **Evaluation**: Responses are scored against benchmarks using automated metrics and human review.
-            4. **Governance Check**: Models are screened for PII leaks and toxicity before approval.
         `
     },
     {
