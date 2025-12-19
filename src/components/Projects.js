@@ -6,7 +6,7 @@ import { projects } from '@/data/projects';
 export default function Projects() {
     return (
         <section id="projects" className="container section">
-            <h2 className="heading-lg" style={{ marginBottom: '3rem' }}>Notable Projects</h2>
+            <h2 className="heading-lg" style={{ marginBottom: '3rem' }}>Projects</h2>
 
             <div className={styles.grid}>
                 {projects.map((project, idx) => (
