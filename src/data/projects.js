@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: "ml-llm-experiment-tracking",
-        title: "1.ML & LLM Experperiment Tracking System with MLFlow",
+        title: "ML & LLM Experperiment Tracking System with MLFlow",
         description: "Centralized system for tracking large language model experiments. Includes prompt versioning, response evaluation benchmarks, and governance policies for model capabilities.",
         tags: ["MLFlow","Experiment Tracking","Prompt versioning","LLMOps"],
         github: "https://github.com/shireesha-ai-infra/ml-llm-experiment-tracking",
@@ -31,28 +31,30 @@ Models, prompt files, and generated outputs are stored as artifacts, enabling vi
         `
     },
     {
-        id: "ai-infrastructure-platform",
-        title: "Production-Grade AI Infrastructure Platform",
+        id: "model-registry-llmops ",
+        title: "Model Registry & Versioning (Models + Prompts + RAG)",
         description: "End-to-end MLOps platform featuring MLflow tracking, registry, and FastAPI inference. Built on Kubernetes with Docker, featuring canary deployments and automated rollbacks via CI/CD.",
         tags: ["Kubernetes", "MLflow", "FastAPI", "Docker", "CI/CD"],
-        github: "#",
+        github: "https://github.com/shireesha-ai-infra/model-registry-llmops",
         live: "#",
         longDescription: `
-            This project is a comprehensive MLOps platform designed to streamline the lifecycle of machine learning models from development to production. 
-            It addresses the challenges of versioning, deployment consistency, and scalability.
-            
-            Key capabilities include:
-            - **Experiment Tracking**: Utilizing MLflow to log parameters, metrics, and artifacts.
-            - **Model Registry**: Centralized management of model versions and stage transitions.
-            - **Scalable Inference**: FastAPI services containerized with Docker and orchestrated by Kubernetes for high availability.
+            This project implements a production-grade AI asset registry for managing the full lifecycle of machine learning models, LLM prompts, OpenAI configurations, and RAG pipelines.
+It uses MLflow as a unified backend to track experiments, store artifacts, and govern asset versions.
+All assets are promoted through explicit staging → production workflows, ensuring safety and auditability.
+The system supports instant rollback without retraining, enabling reliable AI deployments.
+It mirrors real-world AI Infrastructure and LLMOps practices used in modern product companies.
         `,
         executionFlow: `
-            1. **Data Ingestion**: Data is validated and ingested into the training pipeline.
-            2. **Training & Tracking**: Models are trained, with all metadata logged to MLflow.
-            3. **Registration**: The best-performing model is registered and promoted to the 'Staging' stage.
-            4. **CI/CD Pipeline**: A GitHub Actions workflow triggers, building the Docker image and pushing it to the container registry.
-            5. **Deployment**: Kubernetes updates the deployment manifest. Canary deployment strategy allows for gradual traffic shifting.
-            6. **Monitoring**: Prometheus and Grafana monitor system health and model latency.
+            1.Training & Experimentation
+ML models, prompts, LLM configs, and RAG pipelines are created and evaluated through isolated experiment runs.
+	2.	Experiment Tracking
+Metrics, parameters, artifacts, and logs are captured using MLflow for full reproducibility.
+	3.	Unified Registry Storage
+Validated assets are registered in a centralized MLflow registry with metadata and versioning.
+	4.	Staging → Production Promotion
+Assets are explicitly promoted to production only after validation; serving systems consume production-approved assets.
+	5.	Serving & Rollback
+Inference APIs resolve only production assets, with instant rollback to previous safe versions if issues occur.
         `
     },
     {
