@@ -33,8 +33,8 @@ Models, prompt files, and generated outputs are stored as artifacts, enabling vi
     {
         id: "model-registry-llmops ",
         title: "Model Registry & Versioning (Models + Prompts + RAG)",
-        description: "End-to-end MLOps platform featuring MLflow tracking, registry, and FastAPI inference. Built on Kubernetes with Docker, featuring canary deployments and automated rollbacks via CI/CD.",
-        tags: ["Kubernetes", "MLflow", "FastAPI", "Docker", "CI/CD"],
+        description: "End-to-end MLOps platform featuring MLflow registry, and versioning of ML & LLM models, Prompts and RAG",
+        tags: ["Model Registry", "Versioning", "Prompting", "LLM", "RAG"],
         github: "https://github.com/shireesha-ai-infra/model-registry-llmops",
         live: "#",
         longDescription: `
@@ -77,22 +77,21 @@ Inference APIs resolve only production assets, with instant rollback to previous
         `
     },
     {
-        id: "agentic-ai-orchestrator",
-        title: "Agentic AI System Orchestrator",
-        description: "Framework for coordinating multi-agent workflows. Enables agents to dynamically select tools, share context, and execute complex multi-step reasoning tasks.",
-        tags: ["GenAI", "Agents", "Vector DB", "OpenAI API"],
-        github: "#",
+        id: "handling-llm-hallucinations",
+        title: "Handling LLM Hallucinations",
+        description: "A production-grade RAG platform featuring real-time hallucination detection (faithfulness & citation verification), automated mitigation loops, and Weaviate-backed vector retrieval.",
+        tags: ["LLM Hallucinations", "RAG", "Vector DB", "OpenAI API"],
+        github: "https://github.com/shireesha-ai-infra/LLM_Hallucinations__Handling",
         live: "#",
         longDescription: `
-            An advanced framework that enables autonomous agents to collaborate and solve complex problems. 
-            It utilizes a shared memory context and a tool registry to give agents agency.
+            This system orchestrates a robust retrieval-augmented generation pipeline where every LLM response is rigorously validated before reaching the user. It uses an NLI-based "Faithfulness Detector" to ensure the answer is logically entailed by the retrieved Weaviate context and a "Citation Verifier" to guarantee source integrity. If a hallucination is detected, the "Mitigation Engine" automatically triggers self-correction loops or fallback protocols to prevent misinformation. The entire workflow is instrumented with Prometheus metrics to enforce SLAs on reliability and latency.
         `,
         executionFlow: `
-            1. **Task Definition**: User defines a high-level goal.
-            2. **Decomposition**: The orchestrator breaks the goal into sub-tasks.
-            3. **Agent Assignment**: Specialized agents are assigned to each sub-task.
-            4. **Execution & Tool Use**: Agents query the Vector DB for context and use tools (web search, calculator, etc.).
-            5. **Synthesis**: Results are aggregated and synthesized into a final answer.
+            1. Retrieval: The RAGService embeds the user query and fetches relevant grounded context chunks from the Weaviate vector store.
+            2. Generation: The LLMGateway (OpenAI) generates an initial answer based strictly on the provided context system prompt.
+            3. Validation: The FaithfulnessDetector checks if the answer is supported by the context, while the CitationVerifier ensures all [doc-id] references exist.
+            4. Mitigation: If validation scores drop below threshold (e.g., < 0.9), the MitigationEngine rejects the answer and prompts the LLM to rewrite it ("Self-Correction").
+            5. Response: The final validated answer is returned to the user with attached quality metadata, or a safe fallback message is shown if maximum retries are exceeded.
         `
     }
 ];
